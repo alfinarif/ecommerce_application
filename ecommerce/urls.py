@@ -5,7 +5,7 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
-from .views import homeView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -13,8 +13,8 @@ urlpatterns = [
     path('account/', include('accounts.urls')),
     # api route
     path('api/', include('api.urls')),
-    # home view function
-    path('', homeView, name='index'),
+    # store route
+    path('', include('store.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL,

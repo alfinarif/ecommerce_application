@@ -1,7 +1,7 @@
-from django.shortcuts import render
-from django.contrib.sites.shortcuts import get_current_site
+# from django.shortcuts import render
+# from django.contrib.sites.shortcuts import get_current_site
 
 
-def homeView(request):
+# def homeView(request):
     
-    return render(request, 'index.html')
+#     return render(request, 'index.html')
