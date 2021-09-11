@@ -30,8 +30,14 @@ class Brand(models.Model):
         ordering = ['-created', ]
         verbose_name_plural = 'Brand'
 
+
 # product model class
 class Product(models.Model):
+    PRODUCT_STATUS = (
+        ('new', 'new'),
+        ('hot', 'hot'),
+        ('bestseller', 'bestseller'),
+    )
     name = models.CharField(max_length=255)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='category')
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE, related_name='brand')
@@ -41,6 +47,7 @@ class Product(models.Model):
     price = models.FloatField()
     old_price = models.FloatField(default=0.00)
     is_stock = models.BooleanField(default=True)
+    status = models.CharField(max_length=50, choices=PRODUCT_STATUS, default='new')
     slug = models.SlugField()
     created = models.DateTimeField(auto_now_add=True)
 
@@ -76,7 +83,7 @@ class Banner(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self) -> str:
-        return f"{self.product.name} banner image {self.image}"
+        return self.product.name
 
 # product variation manager models class
 class VariationManager(models.Manager):

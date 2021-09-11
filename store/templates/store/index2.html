@@ -1,0 +1,1091 @@
+{% extends 'store/base.html' %}
+{% block body %}
+
+
+	<div class="main-content home-page main-content-home2">
+		<div class="container">
+		
+		
+			<div class="main-slideshow slideshow2">
+				<div class="owl-carousel nav-style1 owl-background" data-autoplay="true" data-nav="true" data-dots="false" data-loop="true" data-slidespeed="800" data-margin="0"  data-responsive = '{"0":{"items":1}, "640":{"items":1}, "768":{"items":1}, "1024":{"items":1}, "1200":{"items":1}}' data-height="400">
+					{% for banner in banners %}
+					<div class="slide-item item1 item-background" data-background="{{banner.image.url}}">
+						<div class="slide-img"><img style='height:400px;' src="{{banner.image.url}}" alt=""></div>
+						<div class="slide-content">
+							<h5 class="subtitle">Premium</h5>
+							<h3 class="title">{{banner.product.name}}</h3>
+							<h5 class="smalltitle">Only: <span> ${{banner.product.price}}</span></h5>
+							<a href="#" class="button">Shop Now</a>
+						</div>
+					</div>
+					{% endfor %}
+					
+				</div>
+			</div>
+		
+			
+			<div class="featrue-box-list equal-container">
+				<div class="row">
+					<div class="col-ss-12 col-xs-12 col-sm-4 col-md-4 col-lg-4 item">
+						<div class="featrue-box layout1 equal-elem">
+							<div class="block-icon"><a href="#"><span class="fa fa-truck"></span></a></div>
+							<div class="block-inner">
+								<a href="#" class="title">Free Shipping & Return</a>
+								<p class="des">Free shipping on all orders over $100</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-ss-12 col-xs-12 col-sm-4 col-md-4 col-lg-4 featrue-item">
+						<div class="featrue-box layout1 equal-elem">
+							<div class="block-icon"><a href="#"><span class="fa fa-retweet"></span></a></div>
+							<div class="block-inner">
+								<a href="#"  class="title">Money back guarantee</a>
+								<p class="des">100% money back guarantee</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-ss-12 col-xs-12 col-sm-4 col-md-4 col-lg-4 featrue-item">
+						<div class="featrue-box layout1 equal-elem">
+							<div class="block-icon"><a href="#"><span class="fa fa-life-ring"></span></a></div>
+							<div class="block-inner">
+								<a href="#"  class="title">Online support 24/7</a>
+								<p class="des">Online support 24/7</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row box-products">
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<div class="box-product-item">
+						<div class="head">
+							<h5 class="title">Featured</h5>
+						</div>
+						<div class="content">
+							<div class="product-list-owl owl-carousel nav-style2 equal-container" data-autoplay="false" data-nav="true" data-dots="false" data-loop="true" data-slidespeed="800" data-margin="0"  data-responsive = '{"0":{"items":1}, "480":{"items":2,"margin":0},"700":{"items":3,"margin":-1}, "768":{"items":1}, "1024":{"items":1}, "1200":{"items":1}}'>
+								
+							{% for product in products %}
+								<div class="product-item layout1">
+									<div class="product-inner equal-elem">
+										<div class="thumb">
+											<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+											<a href="detail.html" class="thumb-link"><img src="{{product.image.url}}" alt=""></a>
+										</div>
+										<div class="info">
+										<div class="rating">
+											<ul class="list-star">
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+											</ul>
+											<span class="count">5 Review(s)</span>
+										</div>
+											<a href="detail.html" class="product-name">PC Prox 21.5-inch and 27-inch (Late 2018)</a>
+											<div class="price">
+												<span>$350.00</span>
+											</div>
+										</div>
+										<div class="group-button">
+											<div class="inner">
+												<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+												<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+												<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							{% endfor %}	
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<div class="box-product-item">
+						<div class="head">
+							<h5 class="title">OnSale</h5>
+						</div>
+						<div class="content">
+							<div class="product-list-owl owl-carousel nav-style2 equal-container" data-autoplay="false" data-nav="true" data-dots="false" data-loop="true" data-slidespeed="800" data-margin="0"  data-responsive = '{"0":{"items":1}, "480":{"items":2,"margin":0},"700":{"items":3,"margin":-1}, "768":{"items":1}, "1024":{"items":1}, "1200":{"items":1}}'>
+								<div class="product-item layout1">
+									<div class="product-inner equal-elem">
+										<ul class="group-flash">
+											<li><span class="sale flash">-50%</span></li>
+										</ul>
+										<div class="thumb">
+											<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+											<a href="detail.html" class="thumb-link"><img src="/static/images/product8.jpg" alt=""></a>
+										</div>
+										<div class="info">
+										<div class="rating">
+											<ul class="list-star">
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+											</ul>
+											<span class="count">5 Review(s)</span>
+										</div>
+											<a href="detail.html" class="product-name">Fujifilm INSTAX Mini 8 Instant Camera (White)</a>
+											<div class="price">
+												<span class="del">$700.00</span>
+												<span class="ins">$350.00</span>
+											</div>
+										</div>
+										<div class="group-button">
+											<div class="inner">
+												<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+												<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+												<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="product-item layout1">
+									<div class="product-inner equal-elem">
+										<ul class="group-flash">
+											<li><span class="sale flash">-50%</span></li>
+										</ul>
+										<div class="thumb">
+											<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+											<a href="detail.html" class="thumb-link"><img src="/static/images/product9.jpg" alt=""></a>
+										</div>
+										<div class="info">
+										<div class="rating">
+											<ul class="list-star">
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+											</ul>
+											<span class="count">5 Review(s)</span>
+										</div>
+											<a href="detail.html" class="product-name">Fujifilm INSTAX Mini 8 Instant Camera (White)</a>
+											<div class="price">
+												<span class="del">$500.00</span>
+												<span class="ins">$250.00</span>
+											</div>
+										</div>
+										<div class="group-button">
+											<div class="inner">
+												<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+												<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+												<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="product-item layout1">
+									<div class="product-inner equal-elem">
+										<ul class="group-flash">
+											<li><span class="sale flash">-50%</span></li>
+										</ul>
+										<div class="thumb">
+											<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+											<a href="detail.html" class="thumb-link"><img src="/static/images/product7.jpg" alt=""></a>
+										</div>
+										<div class="info">
+										<div class="rating">
+											<ul class="list-star">
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+											</ul>
+											<span class="count">5 Review(s)</span>
+										</div>
+											<a href="detail.html" class="product-name">SmartPhone X</a>
+											<div class="price">
+												<span class="del">$700.00</span>
+												<span class="ins">$350.00</span>
+											</div>
+										</div>
+										<div class="group-button">
+											<div class="inner">
+												<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+												<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+												<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<div class="box-product-item">
+						<div class="head">
+							<h5 class="title">New arrivals</h5>
+						</div>
+						<div class="content">
+							<div class="product-list-owl owl-carousel nav-style2 equal-container" data-autoplay="false" data-nav="true" data-dots="false" data-loop="true" data-slidespeed="800" data-margin="0"  data-responsive = '{"0":{"items":1}, "480":{"items":2,"margin":0},"700":{"items":3,"margin":-1}, "768":{"items":1}, "1024":{"items":1}, "1200":{"items":1}}'>
+								<div class="product-item layout1">
+									<div class="product-inner equal-elem">
+										<div class="thumb">
+											<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+											<a href="detail.html" class="thumb-link"><img src="/static/images/product9.jpg" alt=""></a>
+										</div>
+										<div class="info">
+										<div class="rating">
+											<ul class="list-star">
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+											</ul>
+											<span class="count">5 Review(s)</span>
+										</div>
+											<a href="detail.html" class="product-name">PC Prox 21.5-inch and 27-inch (Late 2018)</a>
+											<div class="price">
+												<span>$350.00</span>
+											</div>
+										</div>
+										<div class="group-button">
+											<div class="inner">
+												<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+												<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+												<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="product-item layout1">
+									<div class="product-inner equal-elem">
+										<div class="thumb">
+											<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+											<a href="detail.html" class="thumb-link"><img src="/static/images/product7.jpg" alt=""></a>
+										</div>
+										<div class="info">
+										<div class="rating">
+											<ul class="list-star">
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+											</ul>
+											<span class="count">5 Review(s)</span>
+										</div>
+											<a href="detail.html" class="product-name">Rubberized Hard Case Older MacBook Pro 13.3"</a>
+											<div class="price">
+												<span>$350.00</span>
+											</div>
+										</div>
+										<div class="group-button">
+											<div class="inner">
+												<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+												<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+												<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="product-item layout1">
+									<div class="product-inner equal-elem">
+										<div class="thumb">
+											<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+											<a href="detail.html" class="thumb-link"><img src="/static/images/product8.jpg" alt=""></a>
+										</div>
+										<div class="info">
+										<div class="rating">
+											<ul class="list-star">
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+											</ul>
+											<span class="count">5 Review(s)</span>
+										</div>
+											<a href="detail.html" class="product-name">Camera( White)</a>
+											<div class="price">
+												<span>$350.00</span>
+											</div>
+										</div>
+										<div class="group-button">
+											<div class="inner">
+												<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+												<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+												<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row row-banner">
+				<div class="col-xs-12 col-sm-5">
+					<div class="banner banner-effect1">
+						<a href="#"><img src="/static/images/banner3.jpg" alt=""></a>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-7">
+					<div class="banner banner-effect1">
+						<a href="#"><img src="/static/images/banner4.jpg" alt=""></a>
+					</div>
+				</div>
+			</div>
+			<div class="group-product layout1">
+				<div class="kt-tab nav-tab-style1">
+					<div class="section-head box-has-content">
+						<h4 class="section-title">Top Selling Products</h4>
+						<ul class="nav list-nav">
+							<li class="active"><a data-animated="fadeInLeft" data-toggle="pill" href="#tab1">ALL</a></li>
+							<li><a data-animated="fadeIn" data-toggle="pill" href="#tab2">TV & Audio</a></li>
+							<li><a data-animated="fadeInRight" data-toggle="pill" href="#tab1">Laptop </a></li>
+							<li><a data-animated=" fadeIn" data-toggle="pill" href="#tab2">Accessories </a></li>
+						</ul>
+					</div>
+					<div class="section-content">
+						<div class="tab-content">
+				    		<div id="tab1" class="tab-panel active">
+				    			<div class="owl-carousel product-list-owl nav-style2 equal-container" data-autoplay="false" data-nav="true" data-dots="false" data-loop="false" data-slidespeed="800" data-margin="0"  data-responsive = '{"0":{"items":1}, "480":{"items":2,"margin":0}, "700":{"items":3,"margin":-1}, "992":{"items":4}, "1200":{"items":5}}'>
+				    				<div class="row-item">
+					    				<div class="product-item layout1">
+											<div class="product-inner equal-elem">
+												<div class="thumb">
+													<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+													<a href="detail.html" class="thumb-link"><img src="/static/images/product1.jpg" alt=""></a>
+												</div>
+												<div class="info">
+													<a href="detail.html" class="product-name">Rubberized Hard Case Older MacBook Pro 13.3"</a>
+													<div class="price">
+														<span>$350.00</span>
+													</div>
+												</div>
+												<div class="group-button">
+													<div class="inner">
+														<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+														<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+														<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="product-item layout1">
+											<div class="product-inner equal-elem">
+												<ul class="group-flash">
+													<li><span class="new flash">NEW</span></li>
+												</ul>											
+												<div class="thumb">
+													<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+													<a href="detail.html" class="thumb-link"><img src="/static/images/product2.jpg" alt=""></a>
+												</div>
+												<div class="info">
+													<a href="detail.html" class="product-name">Smartphone RAM 4 GB New</a>
+													<div class="price">
+														<span >$350.00</span>
+													</div>
+												</div>
+												<div class="group-button">
+													<div class="inner">
+													<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+													<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+													<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row-item">
+										<div class="product-item layout1">
+											<div class="product-inner equal-elem">
+												<ul class="group-flash">
+													<li><span class="sale flash">-50%</span></li>
+													<li><span class="best flash">Bestseller</span></li>
+												</ul>
+												<div class="thumb">
+													<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+													<a href="detail.html" class="thumb-link"><img src="/static/images/product3.jpg" alt=""></a>
+												</div>
+												<div class="info">
+													<a href="detail.html" class="product-name">Fujifilm INSTAX Mini 8 Instant Camera (White)</a>
+													<div class="price">
+														<span class="del">$700.00</span>
+														<span class="ins">$350.00</span>
+													</div>
+												</div>
+												<div class="group-button">
+													<div class="inner">
+													<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+													<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+													<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="product-item layout1">
+											<div class="product-inner equal-elem">
+												<div class="thumb">
+													<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+													<a href="detail.html" class="thumb-link"><img src="/static/images/product4.jpg" alt=""></a>
+												</div>
+												<div class="info">
+													<a href="detail.html" class="product-name">PC Prox 21.5-inch and 27-inch (Late 2018) reviews</a>
+													<div class="price">
+														<span >$550.00</span>
+													</div>
+												</div>
+												<div class="group-button">
+													<div class="inner">
+													<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+													<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+													<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row-item">
+										<div class="product-item layout1">
+											<div class="product-inner equal-elem">
+												<ul class="group-flash">
+													<li><span class="sale flash">-50%</span></li>
+												</ul>
+												<div class="thumb">
+													<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+													<a href="detail.html" class="thumb-link"><img src="/static/images/product5.jpg" alt=""></a>
+												</div>
+												<div class="info">
+													<a href="detail.html" class="product-name">Best Accessories- SteelSeries NIMBUS Controlle</a>
+													<div class="price">
+														<span class="del">$500.00</span>
+														<span class="ins">$250.00</span>
+													</div>
+												</div>
+												<div class="group-button">
+													<div class="inner">
+													<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+													<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+													<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="product-item layout1">
+											<div class="product-inner equal-elem">
+												<div class="thumb">
+													<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+													<a href="detail.html" class="thumb-link"><img src="/static/images/product6.jpg" alt=""></a>
+												</div>
+												<div class="info">
+													<a href="detail.html" class="product-name">Headphone </a>
+													<div class="price">
+														<span >$450.00</span>
+													</div>
+												</div>
+												<div class="group-button">
+													<div class="inner">
+													<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+													<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+													<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row-item">
+					    				<div class="product-item layout1">
+											<div class="product-inner equal-elem">
+												<div class="thumb">
+													<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+													<a href="detail.html" class="thumb-link"><img src="/static/images/product10.jpg" alt=""></a>
+												</div>
+												<div class="info">
+													<a href="detail.html" class="product-name">Rubberized Hard Case Older MacBook Pro 13.3"</a>
+													<div class="price">
+														<span>$350.00</span>
+													</div>
+												</div>
+												<div class="group-button">
+													<div class="inner">
+														<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+														<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+														<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="product-item layout1">
+											<div class="product-inner equal-elem">
+												<ul class="group-flash">
+													<li><span class="new flash">NEW</span></li>
+												</ul>											
+												<div class="thumb">
+													<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+													<a href="detail.html" class="thumb-link"><img src="/static/images/product11.jpg" alt=""></a>
+												</div>
+												<div class="info">
+													<a href="detail.html" class="product-name">Smartphone RAM 4 GB New</a>
+													<div class="price">
+														<span >$350.00</span>
+													</div>
+												</div>
+												<div class="group-button">
+													<div class="inner">
+													<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+													<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+													<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row-item">
+					    				<div class="product-item layout1">
+											<div class="product-inner equal-elem">
+												<div class="thumb">
+													<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+													<a href="detail.html" class="thumb-link"><img src="/static/images/product12.jpg" alt=""></a>
+												</div>
+												<div class="info">
+													<a href="detail.html" class="product-name">Rubberized Hard Case Older MacBook Pro 13.3"</a>
+													<div class="price">
+														<span>$350.00</span>
+													</div>
+												</div>
+												<div class="group-button">
+													<div class="inner">
+														<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+														<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+														<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="product-item layout1">
+											<div class="product-inner equal-elem">
+												<ul class="group-flash">
+													<li><span class="new flash">NEW</span></li>
+												</ul>											
+												<div class="thumb">
+													<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+													<a href="detail.html" class="thumb-link"><img src="/static/images/product3.jpg" alt=""></a>
+												</div>
+												<div class="info">
+													<a href="detail.html" class="product-name">Smartphone RAM 4 GB New</a>
+													<div class="price">
+														<span >$350.00</span>
+													</div>
+												</div>
+												<div class="group-button">
+													<div class="inner">
+													<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+													<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+													<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row-item">
+										<div class="product-item layout1">
+											<div class="product-inner equal-elem">
+												<ul class="group-flash">
+													<li><span class="sale flash">-50%</span></li>
+													<li><span class="best flash">Bestseller</span></li>
+												</ul>
+												<div class="thumb">
+													<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+													<a href="detail.html" class="thumb-link"><img src="/static/images/product3.jpg" alt=""></a>
+												</div>
+												<div class="info">
+													<a href="detail.html" class="product-name">Fujifilm INSTAX Mini 8 Instant Camera (White)</a>
+													<div class="price">
+														<span class="del">$700.00</span>
+														<span class="ins">$350.00</span>
+													</div>
+												</div>
+												<div class="group-button">
+													<div class="inner">
+													<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+													<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+													<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="product-item layout1">
+											<div class="product-inner equal-elem">
+												<div class="thumb">
+													<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+													<a href="detail.html" class="thumb-link"><img src="/static/images/product4.jpg" alt=""></a>
+												</div>
+												<div class="info">
+													<a href="detail.html" class="product-name">PC Prox 21.5-inch and 27-inch (Late 2018) reviews</a>
+													<div class="price">
+														<span >$550.00</span>
+													</div>
+												</div>
+												<div class="group-button">
+													<div class="inner">
+													<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+													<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+													<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+				    			</div>
+				    		</div>
+				    		<div id="tab2" class="tab-panel">
+				    			<div class="owl-carousel product-list-owl nav-style2 equal-container" data-autoplay="false" data-nav="true" data-dots="false" data-loop="false" data-slidespeed="800" data-margin="0"  data-responsive = '{"0":{"items":1}, "480":{"items":2,"margin":0}, "700":{"items":3,"margin":-1}, "992":{"items":4}, "1200":{"items":5}}'>
+				    				<div class="row-item">
+					    				<div class="product-item layout1">
+											<div class="product-inner equal-elem">
+												<div class="thumb">
+													<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+													<a href="detail.html" class="thumb-link"><img src="/static/images/product1.jpg" alt=""></a>
+												</div>
+												<div class="info">
+													<a href="detail.html" class="product-name">Rubberized Hard Case Older MacBook Pro 13.3"</a>
+													<div class="price">
+														<span>$350.00</span>
+													</div>
+												</div>
+												<div class="group-button">
+													<div class="inner">
+														<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+														<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+														<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="product-item layout1">
+											<div class="product-inner equal-elem">
+												<ul class="group-flash">
+													<li><span class="new flash">NEW</span></li>
+												</ul>											
+												<div class="thumb">
+													<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+													<a href="detail.html" class="thumb-link"><img src="/static/images/product2.jpg" alt=""></a>
+												</div>
+												<div class="info">
+													<a href="detail.html" class="product-name">Smartphone RAM 4 GB New</a>
+													<div class="price">
+														<span >$350.00</span>
+													</div>
+												</div>
+												<div class="group-button">
+													<div class="inner">
+													<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+													<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+													<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row-item">
+										<div class="product-item layout1">
+											<div class="product-inner equal-elem">
+												<ul class="group-flash">
+													<li><span class="sale flash">-50%</span></li>
+													<li><span class="best flash">Bestseller</span></li>
+												</ul>
+												<div class="thumb">
+													<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+													<a href="detail.html" class="thumb-link"><img src="/static/images/product3.jpg" alt=""></a>
+												</div>
+												<div class="info">
+													<a href="detail.html" class="product-name">Fujifilm INSTAX Mini 8 Instant Camera (White)</a>
+													<div class="price">
+														<span class="del">$700.00</span>
+														<span class="ins">$350.00</span>
+													</div>
+												</div>
+												<div class="group-button">
+													<div class="inner">
+													<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+													<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+													<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="product-item layout1">
+											<div class="product-inner equal-elem">
+												<div class="thumb">
+													<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+													<a href="detail.html" class="thumb-link"><img src="/static/images/product4.jpg" alt=""></a>
+												</div>
+												<div class="info">
+													<a href="detail.html" class="product-name">PC Prox 21.5-inch and 27-inch (Late 2018) reviews</a>
+													<div class="price">
+														<span >$550.00</span>
+													</div>
+												</div>
+												<div class="group-button">
+													<div class="inner">
+													<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+													<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+													<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row-item">
+										<div class="product-item layout1">
+											<div class="product-inner equal-elem">
+												<ul class="group-flash">
+													<li><span class="sale flash">-50%</span></li>
+												</ul>
+												<div class="thumb">
+													<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+													<a href="detail.html" class="thumb-link"><img src="/static/images/product5.jpg" alt=""></a>
+												</div>
+												<div class="info">
+													<a href="detail.html" class="product-name">Best Accessories- SteelSeries NIMBUS Controlle</a>
+													<div class="price">
+														<span class="del">$500.00</span>
+														<span class="ins">$250.00</span>
+													</div>
+												</div>
+												<div class="group-button">
+													<div class="inner">
+													<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+													<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+													<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="product-item layout1">
+											<div class="product-inner equal-elem">
+												<div class="thumb">
+													<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+													<a href="detail.html" class="thumb-link"><img src="/static/images/product6.jpg" alt=""></a>
+												</div>
+												<div class="info">
+													<a href="detail.html" class="product-name">Headphone </a>
+													<div class="price">
+														<span >$450.00</span>
+													</div>
+												</div>
+												<div class="group-button">
+													<div class="inner">
+													<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+													<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+													<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row-item">
+					    				<div class="product-item layout1">
+											<div class="product-inner equal-elem">
+												<div class="thumb">
+													<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+													<a href="detail.html" class="thumb-link"><img src="/static/images/product10.jpg" alt=""></a>
+												</div>
+												<div class="info">
+													<a href="detail.html" class="product-name">Rubberized Hard Case Older MacBook Pro 13.3"</a>
+													<div class="price">
+														<span>$350.00</span>
+													</div>
+												</div>
+												<div class="group-button">
+													<div class="inner">
+														<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+														<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+														<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="product-item layout1">
+											<div class="product-inner equal-elem">
+												<ul class="group-flash">
+													<li><span class="new flash">NEW</span></li>
+												</ul>											
+												<div class="thumb">
+													<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+													<a href="detail.html" class="thumb-link"><img src="/static/images/product11.jpg" alt=""></a>
+												</div>
+												<div class="info">
+													<a href="detail.html" class="product-name">Smartphone RAM 4 GB New</a>
+													<div class="price">
+														<span >$350.00</span>
+													</div>
+												</div>
+												<div class="group-button">
+													<div class="inner">
+													<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+													<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+													<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row-item">
+					    				<div class="product-item layout1">
+											<div class="product-inner equal-elem">
+												<div class="thumb">
+													<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+													<a href="detail.html" class="thumb-link"><img src="/static/images/product12.jpg" alt=""></a>
+												</div>
+												<div class="info">
+													<a href="detail.html" class="product-name">Rubberized Hard Case Older MacBook Pro 13.3"</a>
+													<div class="price">
+														<span>$350.00</span>
+													</div>
+												</div>
+												<div class="group-button">
+													<div class="inner">
+														<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+														<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+														<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="product-item layout1">
+											<div class="product-inner equal-elem">
+												<ul class="group-flash">
+													<li><span class="new flash">NEW</span></li>
+												</ul>											
+												<div class="thumb">
+													<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+													<a href="detail.html" class="thumb-link"><img src="/static/images/product3.jpg" alt=""></a>
+												</div>
+												<div class="info">
+													<a href="detail.html" class="product-name">Smartphone RAM 4 GB New</a>
+													<div class="price">
+														<span >$350.00</span>
+													</div>
+												</div>
+												<div class="group-button">
+													<div class="inner">
+													<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+													<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+													<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+				    			</div>
+				    		</div>
+				    	</div>
+			    	</div>
+	    		</div>	
+			</div>		
+		</div>
+		<div class="products-view">
+			<div class="container">
+				<div class="section-head box-has-content">
+					<h4 class="section-title">Most Viewed Products</h4>
+				</div>
+				<div class="section-content">
+					<div class="owl-carousel product-list-owl nav-style2 equal-container" data-autoplay="false" data-nav="true" data-dots="false" data-loop="false" data-slidespeed="800" data-margin="0"  data-responsive = '{"0":{"items":1}, "480":{"items":2,"margin":0}, "700":{"items":3,"margin":-1}, "992":{"items":4}, "1200":{"items":4}}'>
+	    				<div class="product-item layout1">
+							<div class="product-inner equal-elem">
+								<div class="thumb">
+									<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+									<a href="detail.html" class="thumb-link"><img src="/static/images/product1.jpg" alt=""></a>
+								</div>
+								<div class="info">
+									<a href="detail.html" class="product-name">Rubberized Hard Case Older MacBook Pro 13.3"</a>
+									<div class="price">
+										<span>$350.00</span>
+									</div>
+								</div>
+								<div class="group-button">
+									<div class="inner">
+										<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+										<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+										<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="product-item layout1">
+							<div class="product-inner equal-elem">
+								<ul class="group-flash">
+									<li><span class="new flash">NEW</span></li>
+								</ul>											
+								<div class="thumb">
+									<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+									<a href="detail.html" class="thumb-link"><img src="/static/images/product2.jpg" alt=""></a>
+								</div>
+								<div class="info">
+									<a href="detail.html" class="product-name">Smartphone RAM 4 GB New</a>
+									<div class="price">
+										<span >$350.00</span>
+									</div>
+								</div>
+								<div class="group-button">
+									<div class="inner">
+									<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+									<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+									<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="product-item layout1">
+							<div class="product-inner equal-elem">
+								<ul class="group-flash">
+									<li><span class="sale flash">-50%</span></li>
+									<li><span class="best flash">Bestseller</span></li>
+								</ul>
+								<div class="thumb">
+									<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+									<a href="detail.html" class="thumb-link"><img src="/static/images/product3.jpg" alt=""></a>
+								</div>
+								<div class="info">
+									<a href="detail.html" class="product-name">Fujifilm INSTAX Mini 8 Instant Camera (White)</a>
+									<div class="price">
+										<span class="del">$700.00</span>
+										<span class="ins">$350.00</span>
+									</div>
+								</div>
+								<div class="group-button">
+									<div class="inner">
+									<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+									<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+									<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="product-item layout1">
+							<div class="product-inner equal-elem">
+								<div class="thumb">
+									<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+									<a href="detail.html" class="thumb-link"><img src="/static/images/product4.jpg" alt=""></a>
+								</div>
+								<div class="info">
+									<a href="detail.html" class="product-name">PC Prox 21.5-inch and 27-inch (Late 2018) reviews</a>
+									<div class="price">
+										<span >$550.00</span>
+									</div>
+								</div>
+								<div class="group-button">
+									<div class="inner">
+									<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+									<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+									<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="product-item layout1">
+							<div class="product-inner equal-elem">
+								<ul class="group-flash">
+									<li><span class="sale flash">-50%</span></li>
+								</ul>
+								<div class="thumb">
+									<a href="#" class="quickview-button"><span class="icon"><i class="fa fa-eye" aria-hidden="true"></i></span> Quick View</a>
+									<a href="detail.html" class="thumb-link"><img src="/static/images/product5.jpg" alt=""></a>
+								</div>
+								<div class="info">
+									<a href="detail.html" class="product-name">Best Accessories- SteelSeries NIMBUS Controlle</a>
+									<div class="price">
+										<span class="del">$500.00</span>
+										<span class="ins">$250.00</span>
+									</div>
+								</div>
+								<div class="group-button">
+									<div class="inner">
+									<a href="#" class="add-to-cart"><span class="text">ADD TO CART</span><span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span></a>
+									<a href="#" class="compare-button"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+									<a href="#" class="wishlist-button"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+	    			</div>
+	    		</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="our-blog">
+				<div class="section-head box-has-content">
+					<h4 class="section-title">From our blog</h4>
+				</div>
+				<div class="owl-carousel nav-style2" data-autoplay="false" data-nav="true" data-dots="false" data-loop="true" data-slidespeed="800" data-margin="20"  data-responsive = '{"0":{"items":1}, "500":{"items":2}, "768":{"items":2}, "1024":{"items":2}, "1200":{"items":2}}'>
+					<div class="post-item layout1">
+						<div class="post-format">
+							<a href="blogpost.html"><img src="/static/images/blog3.jpg" alt=""></a>
+						</div>
+						<div class="post-info">
+							<div class="head">
+								<div class="post-date">
+									<span class="day">16</span>
+									<span class="month">May</span>
+								</div>
+								<a href="blogpost.html" class="post-title">We’re the best Designers from UK</a>
+							</div>
+							<div class="main-info-post">
+								<ul class="meta-post">
+									<li class="time-post"><a href="#">23 Dec 2018</a></li>
+									<li class="comments"><a href="#"><span class="icon"><i class="fa fa-comment" aria-hidden="true"></i></span><span class="count">68 Comments</span></a></li>
+								</ul>
+								<p class="des">Lorem ipsum dolor sit amet, consectetur dcin Maecenas at rhoncus sapien [...]</p>
+								<a href="blogpost.html" class="button read-more">Read more <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="post-item layout1">
+						<div class="post-format">
+							<a href="blogpost.html"><img src="/static/images/blog4.jpg" alt=""></a>
+						</div>
+						<div class="post-info">
+							<div class="head">
+								<div class="post-date">
+									<span class="day">23</span>
+									<span class="month">Dec</span>
+								</div>
+								<a href="blogpost.html" class="post-title">We’re the best Designers from UK</a>
+							</div>
+							<div class="main-info-post">
+								<ul class="meta-post">
+									<li class="time-post"><a href="#">23 Dec 2018</a></li>
+									<li class="comments"><a href="#"><span class="icon"><i class="fa fa-comment" aria-hidden="true"></i></span><span class="count">68 Comments</span></a></li>
+								</ul>
+								<p class="des">Lorem ipsum dolor sit amet, consectetur dcin Maecenas at rhoncus sapien [...]</p>
+								<a href="blogpost.html" class="button read-more">Read more <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="brand">
+			<div class="container">
+				<div class="owl-carousel" data-autoplay="false" data-nav="false" data-dots="false" data-loop="false" data-slidespeed="800" data-margin="30"  data-responsive = '{"0":{"items":2}, "480":{"items":2}, "640":{"items":3}, "1024":{"items":4}, "1200":{"items":5}}'>
+					<div class="brand-item"><a href="#"><img src="/static/images/brand1.jpg" alt=""></a></div>
+					<div class="brand-item"><a href="#"><img src="/static/images/brand1.jpg" alt=""></a></div>
+					<div class="brand-item"><a href="#"><img src="/static/images/brand1.jpg" alt=""></a></div>
+					<div class="brand-item"><a href="#"><img src="/static/images/brand1.jpg" alt=""></a></div>
+					<div class="brand-item"><a href="#"><img src="/static/images/brand1.jpg" alt=""></a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+
+
+
+
+{% endblock body %}
