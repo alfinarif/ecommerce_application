@@ -47,7 +47,8 @@ class Product(models.Model):
     price = models.FloatField()
     old_price = models.FloatField(default=0.00)
     is_stock = models.BooleanField(default=True)
-    status = models.CharField(max_length=50, choices=PRODUCT_STATUS, default='new')
+    status = models.CharField(max_length=50, choices=PRODUCT_STATUS, default='new', blank=True, null=True)
+    status_valid = models.DateTimeField()
     slug = models.SlugField()
     created = models.DateTimeField(auto_now_add=True)
 
@@ -56,6 +57,11 @@ class Product(models.Model):
 
     def get_product_url(self):
         return reverse('store:product_detail', kwargs={'slug': self.slug})
+    
+    def get_discount_percentage(self):
+        discount_percentage = (self.old_price - self.price) / self.old_price * 100
+        return int(discount_percentage)
+        
 
     def save(self, *args, **kwargs):
         if not self.slug:
