@@ -3,7 +3,7 @@ from django.shortcuts import render
 # django generic view
 from django.views.generic import ListView, DetailView, TemplateView
 # import models
-from store.models import Category, Product, Banner
+from store.models import Category, Product, Banner, ProductImageGallery
 
 from datetime import datetime
 from django.utils import timezone
@@ -33,7 +33,13 @@ class IndexProductListView(TemplateView):
 class ProductDetailsView(DetailView):
     model = Product
     context_object_name = 'product'
-    template_name = 'store/product.html'
+    template_name = 'store/detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['product_images'] = ProductImageGallery.objects.filter(product=self.object.id)
+        context['category_based'] = Product.objects.filter(category=self.object.category)
+        return context
 
 
 
