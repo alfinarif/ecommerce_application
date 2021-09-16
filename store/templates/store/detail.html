@@ -100,6 +100,7 @@
 				    						<div class="customer-review">
 				    							<h3 class="title supper-title">CUSTOMER REVIEWS <span class="count">( 2 Reviews )</span></h3>
 				    							<ul class="list-review">
+				    							{% for review in reviews %}
 				    								<li class="review-item">
 				    									<div class="character">
 				    										<div class="rating">
@@ -111,33 +112,15 @@
 																	<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
 																</ul>
 															</div>
-															<a href="#" class="author">Christiana Doe</a>
-															<div class="time-review">20 Dec 2015</div>
+															<a href="#" class="author">{{review.user.email}}</a>
+															<div class="time-review">{{review.created}}</div>
 				    									</div>
 				    									<div class="review-content">
-				    										<h3 class="title">What a Beautiful Design</h3>
-				    										<p class="content">Cras neque nulla, convallis non commodo et, euismod nonsese. At vero eos et accusamus et iusto odio dignimos ducimus qui blanditiis praesentium voluptatum</p>
+				    										<h3 class="title">{{review.product.name}}</h3>
+				    										<p class="content">{{review.review_msg}}</p>
 				    									</div>
 				    								</li>
-				    								<li class="review-item">
-				    									<div class="character">
-				    										<div class="rating">
-																<ul class="list-star">
-																	<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-																	<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-																	<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-																	<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-																	<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-																</ul>
-															</div>
-															<a href="#" class="author">Jonathan Doe</a>
-															<div class="time-review">20 Dec 2015</div>
-				    									</div>
-				    									<div class="review-content">
-				    										<h3 class="title">Amazing Minimal theme</h3>
-				    										<p class="content">Cras neque nulla, convallis non commodo et, euismod nonsese. At vero eos et accusamus et iusto odio dignimos ducimus qui blanditiis praesentium voluptatum</p>
-				    									</div>
-				    								</li>
+												{% endfor %}	
 				    							</ul>
 				    						</div>
 				    					</div>

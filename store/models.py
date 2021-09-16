@@ -1,6 +1,8 @@
 from django.db import models
+from django.db.models.fields.related import ForeignKey
 from django.urls import reverse
 from django.template.defaultfilters import slugify
+from accounts.models import User
 
 
 # category model class
@@ -119,3 +121,17 @@ class Variation(models.Model):
     class Meta:
         ordering = ['-created', ]
         verbose_name_plural = 'Product Variations'
+
+
+
+# product review model class
+class Review(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='review')
+    review_msg = models.TextField(max_length=1000, blank=True, null=True)
+    star = models.IntegerField()
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return self.review_msg
+
