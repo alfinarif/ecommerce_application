@@ -145,24 +145,17 @@
 				    							<h3 class="title supper-title">ADD A REVIEW</h3>
 				    							<div class="row">
 					    							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-					    								<input type="text" class="input-info" placeholder="Your name">
-					    							</div>
-					    							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-					    								<input type="text" class="input-info" placeholder="Your email">
+					    								<form action="" method="post">
+															{% csrf_token %}
+															{{form.as_p}}
+															<input type='hidden' name='product' value='{{product.pk}}'>
+														
 					    							</div>
 					    						</div>
-				    							<textarea rows="6"  class="input-info input-content" placeholder="Your review"></textarea>
-				    							<div class="rating">
-				    								<span class="text">Your rating</span>
-													<ul class="list-star">
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-													</ul>
-												</div>
-												<a href="#" class="submit">SUBMIT</a>
+				    							
+				    							
+													<input type='submit' class="submit" value="SUBMIT">
+												</form>
 				    						</div>
 				    					</div>
 				    				</div>

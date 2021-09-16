@@ -1,9 +1,12 @@
 from django.db import models
-from django.shortcuts import render
+from django.http.response import HttpResponseRedirect
+from django.shortcuts import redirect, render
+from django.http import HttpResponseRedirect
 # django generic view
 from django.views.generic import ListView, DetailView, TemplateView
 # import models
 from store.models import Category, Product, Banner, ProductImageGallery, Brand, Review
+from store.forms import ProductReviewForm
 
 from datetime import datetime
 from django.utils import timezone
@@ -32,18 +35,38 @@ class IndexProductListView(TemplateView):
 
 # product details class view
 class ProductDetailsView(DetailView):
-    model = Product
-    context_object_name = 'product'
-    template_name = 'store/detail.html'
+    def get(self, request, slug, *args, **kwargs):
+        product = Product.objects.get(slug=slug)
+        product_images = ProductImageGallery.objects.filter(product=product)
+        category_based = Product.objects.filter(category=product.category)
+        reviews = Review.objects.filter(product=product)
+        form = ProductReviewForm()
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['product_images'] = ProductImageGallery.objects.filter(product=self.object.id)
-        context['category_based'] = Product.objects.filter(category=self.object.category)
-        context['reviews'] = Review.objects.filter(product=self.object.id)
-        context['reviews_count'] = Review.objects.filter(product=self.object.id).count()
-        return context
+        context = {
+            'product': product,
+            'product_images': product_images,
+            'category_based': category_based,
+            'reviews': reviews,
+            'review_count': reviews.count(),
+            'form': form
+        }
 
+        return render(request, 'store/detail.html', context)
+
+    def post(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            if request.method == 'post' or request.method == 'POST':
+                get_product = request.POST.get('product')
+                product = Product.objects.get(id=get_product)
+                form = ProductReviewForm(request.POST)
+                if form.is_valid():
+                    review_form = form.save(commit=False)
+                    review_form.user = request.user
+                    review_form.product = product
+                    review_form.save()
+                    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        else:
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
 
