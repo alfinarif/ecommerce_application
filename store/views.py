@@ -41,6 +41,7 @@ class ProductDetailsView(DetailView):
         context['product_images'] = ProductImageGallery.objects.filter(product=self.object.id)
         context['category_based'] = Product.objects.filter(category=self.object.category)
         context['reviews'] = Review.objects.filter(product=self.object.id)
+        context['reviews_count'] = Review.objects.filter(product=self.object.id).count()
         return context
 
 

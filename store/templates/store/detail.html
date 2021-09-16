@@ -98,18 +98,34 @@
 				    				<div class="row">
 				    					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 				    						<div class="customer-review">
-				    							<h3 class="title supper-title">CUSTOMER REVIEWS <span class="count">( 2 Reviews )</span></h3>
+				    							<h3 class="title supper-title">CUSTOMER REVIEWS <span class="count">( {{reviews_count}} Reviews )</span></h3>
 				    							<ul class="list-review">
 				    							{% for review in reviews %}
 				    								<li class="review-item">
 				    									<div class="character">
 				    										<div class="rating">
 																<ul class="list-star">
+																{% if review.star == 1 %}
+																	<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+																{% elif review.star == 2 %}
+																	<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+																	<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+																{% elif review.star == 3 %}
 																	<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
 																	<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
 																	<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+																{% elif review.star == 4 %}
 																	<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-																	<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+																	<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+																	<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>	
+																	<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+																{% elif review.star == 5 %}	
+																	<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+																	<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+																	<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>	
+																	<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>	
+																	<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>	
+																{% endif %}
 																</ul>
 															</div>
 															<a href="#" class="author">{{review.user.email}}</a>
