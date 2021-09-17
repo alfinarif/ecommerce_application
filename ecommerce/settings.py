@@ -12,11 +12,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '4v=!9$d#@$b73y3o_zd=32t2wxz2+j6&8nw6a&&-ec1^qdfmcy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG = False
+# DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-# ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # auth user model
 AUTH_USER_MODEL = 'accounts.User'
@@ -82,24 +82,24 @@ CORS_ALLOWED_ORIGINS = [
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 #postgresql database
-# DATABASES={
-#    'default':{
-#       'ENGINE':'django.db.backends.postgresql_psycopg2',
-#       'NAME':'cleavercode',
-#       'USER':'cleavercode',
-#       'PASSWORD':'<Alfin@5555arif',
-#       'HOST':'localhost',
-#       'PORT':'',
-#    }
-# }
+DATABASES={
+   'default':{
+      'ENGINE':'django.db.backends.postgresql_psycopg2',
+      'NAME':'cleavercode',
+      'USER':'cleavercode',
+      'PASSWORD':'<Alfin@5555arif',
+      'HOST':'localhost',
+      'PORT':'',
+   }
+}
 
 # django rest_framework authentication classes
 REST_FRAMEWORK = {

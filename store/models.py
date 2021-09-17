@@ -73,6 +73,7 @@ class Product(models.Model):
     class Meta:
         ordering = ['-created', ]
         verbose_name_plural = 'Products'
+    
 
 
 # product image gallery models class
@@ -125,6 +126,10 @@ class Variation(models.Model):
 
 
 # product review model class
+class ReviewManager(models.Manager):
+    def reviews(self):
+        return super(ReviewManager, self).all().order_by('created')
+
 class Review(models.Model):
     REVIEW_STAR = (
         (1, 1),
@@ -138,6 +143,7 @@ class Review(models.Model):
     review_msg = models.TextField(max_length=1000, blank=True, null=True)
     star = models.IntegerField(choices=REVIEW_STAR)
     created = models.DateTimeField(auto_now_add=True)
+    objects = ReviewManager()
 
     def __str__(self) -> str:
         return self.review_msg

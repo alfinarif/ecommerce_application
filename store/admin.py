@@ -21,7 +21,5 @@ class ProductAdmin(admin.ModelAdmin):
 admin.site.register(Banner)
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category)
-admin.site.register(Variation)
 admin.site.register(Brand)
-admin.site.register(ProductImageGallery)
 admin.site.register(Review)
